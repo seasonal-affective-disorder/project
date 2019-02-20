@@ -2,3 +2,58 @@
 body {
 	font-family: 'Source Sans Pro', sans-serif;
 }
+
+.container {
+	border-radius: 10px;
+	border: 1px dotted black;
+	width: 30%;
+	margin: auto;
+	margin-top: 100px;
+	padding: 15px;
+}
+
+.question {
+	font-size: 24px;
+}
+
+ .answers {
+ 	font-size: 16px;
+ }
+
+ .back {
+ 	display: inline-block;
+ }
+
+.back button {
+	margin-top: 10px;
+	margin-left: auto;
+}
+ .next {
+ 	display: inline-block;
+ }
+
+ .next button {
+ 	margin-top: 10px;
+ 	background-color: blue;
+ 	color: white;
+ 	border-radius: 4px;
+ }
+
+.resources {
+	text-align: center;
+}
+ .resources td {
+ 	text-align: center;
+ }
+ .resources img {
+ 	height: 200px;
+
+ }
+
+tr:nth-child(even) {
+    background-color: #EFEFEF;
+}
+
+ th {
+ 	width: 300px;
+ }
