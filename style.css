@@ -189,6 +189,15 @@ footer{
 	overflow: scroll;
 	height: -webkit-calc(100% -100px);
 }*/
+table{
+	border: 1px dotted black;
+	border-collapse: collapse;
+	border-radius: 5px;
+}
+iframe {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
  #body_wrapper td {
  	text-align: center;
  }
@@ -196,11 +205,22 @@ footer{
  	height: 200px;
 
  }
-
+.products {
+	text-decoration: underline;
+}
 tr:nth-child(even) {
     background-color: #EFEFEF;
 }
 
  th {
  	width: 300px;
+ }
+ #posts ul {
+ 	list-style: none;
+ 	margin: auto;
+ }
+ #posts ul li{
+ 	float: left;
+ 	width: 30%;
+ 	margin-left: 10px;
  }
