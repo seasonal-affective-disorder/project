@@ -1,4 +1,124 @@
 
+/* 
+	Global styling 
+					*/
 body {
+	overflow:hidden;
+	text-align: center;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+
+#header{
+	box-shadow: 0 8px 6px -6px black;
+	text-align: left;
+	height: 50px;
+}
+
+#logo img{
+	margin-left: -30px;
+	float: left;
+	height:38px;
+}
+
+#header ul{
+	list-style-type: none;
+
+}
+.menu_tab{
+	line-height:50px;
+	float: left;
+	margin:0 20px;
+	text-decoration:none;
+	color: black;
+}
+
+#search_box{
+	padding: 0 5px;
+	float:right;
+	margin:10px 20px;
+	display: flex;
+	color: black;
+	text-decoration:none;
+}
+
+.dropdown {
+	float:right;
+	overflow: hidden;
+  }
+  
+.dropdown #profile_tab img {
+	height:38px;
+	float:right;
+	margin:0 20px;
+}
+  
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+  }
+  
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+  
+.dropdown-content a:hover {
+	background-color: #ddd;
+  }
+  
+.dropdown:hover .dropdown-content {
+	display: block;
+  }
+
+#body_wrapper{
+	width: 100%;
+	height: -webkit-calc(100% - 100px);
+	overflow-y: scroll;
+}
+
+footer{
+	background: rgb(127, 96, 0);
+	height: 55.68px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+.footer_tab{
+	color:white;
+	text-decoration: none;
+	margin: 0 40px;
+	line-height: 55.68px;
+	font-size: 125%;
+}
+
+/* 
+	Home page 
+					*/
+#intro h3{
+	margin:30px;
+	text-align: left;
+}
+
+#title_name img{
+	margin-top: 30px;
+	width: 907.2 px;
+	height: 55.68px;
+}
+
+.tile{
+	margin: 20px;
+}
+
+.tile:hover
+{
+	margin: 20px;
+	box-shadow: 0px 1px 7px 0px rgb(106, 111, 109)
+}
+
+/* 
+	Evaluate 
+					*/
