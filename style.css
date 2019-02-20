@@ -64,7 +64,7 @@ footer{
 	font-size: 125%;
 }
 
-.Question {
+.container {
 	border-radius: 10px;
 	border: 1px dotted black;
 	width: 30%;
@@ -106,24 +106,4 @@ footer{
  	background-color: blue;
  	color: white;
  	border-radius: 4px;
-}
-
-#answer1{
-
-}
-
-#answer2{
-	
-}
-
-#answer3{
-	
-}
-
-#answer4{
-	
-}
-
-#answer5{
-	
 }
