@@ -40,12 +40,40 @@ body {
 	color: black;
 	text-decoration:none;
 }
-#profile_tab img{
+
+.dropdown {
+	float:right;
+	overflow: hidden;
+  }
+  
+.dropdown #profile_tab img {
 	height:38px;
 	float:right;
 	margin:0 20px;
-
 }
+  
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+  }
+  
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+  }
+  
+.dropdown-content a:hover {
+	background-color: #ddd;
+  }
+  
+.dropdown:hover .dropdown-content {
+	display: block;
+  }
+
 #body_wrapper{
 	width: 100%;
 	height: -webkit-calc(100% - 100px);

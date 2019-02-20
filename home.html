@@ -16,7 +16,16 @@
                 <li> <a class="menu_tab" href="#">Activities</a> </li>
                 <li> <a class="menu_tab" href="#">Evaluation</a> </li>
                 <li> <a class="menu_tab" href="#">Calendar</a> </li>
-                <li> <a id="profile_tab" href="#"><img src="images/profile.jpg" alt="profile" ></a> </li>
+                <li>
+                    <div class="dropdown">
+                        <button id="profile_tab" style="background: none; border: none;"> 
+                            <img src="images/profile.jpg" alt="profile" >
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">Log in</a>
+                        </div>
+                    </div> 
+                </li>
                 <li id="search_box" style="border:1px solid;">
                     <input  type="text" placeholder="Search.." style="border:none;">
                     <button style="height: 25px; background: none;border: none;" type="submit" onclick="">
