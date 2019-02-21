@@ -10,7 +10,7 @@ Seasonal affective disorder (SAD) is a kind of depression that is caused by the 
 ## Analysis
 The most difficult aspect of fighting SAD is that we have no control over the weather. Additionally, mental health issues are often stigmatized and people do not always seek help when they need it. According to an online source, 9 out of 10 people who experience mental health issues experience stigmatization or discrimination, and fewer than 40 percent of people who need help actually seek for it. Some people may not even realize they are experiencing seasonal depression. However, this does not mean that there are not steps or solutions that can be used to fight SAD. Because SAD is typically caused by a lack of sunlight, light therapy is often prescribed, which involves sitting in front of a light box for 30 minutes a day. Light therapy has been fairly effective at treating SAD although research is limited, but it still requires someone to seek out help, and light boxes that truly emulate sunlight can be expensive. Typical antidepressant medication can also be used to fight SAD, but again, this requires a conscious decision to seek help and go to the doctor, which not everyone does. Walking outside, even in the cold, therapy, and meditation can also be used to help fight SAD. People need to know more about the universality of this disorder, so that they do not feel alone in the battle, along with being more aware of resources and treatments.
 
-## Developed by
+## Developers
 Lindsay Wilson
 
 Makenna Littlejohn
