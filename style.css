@@ -1,4 +1,3 @@
-
 /* 
 	Global styling 
 					*/
@@ -105,9 +104,10 @@ footer{
 
 #title_name img{
 	margin-top: 30px;
-	width: 907.2 px;
-	height: 55.68px;
+	width: 100%;
+	/*height: 55.68px;*/
 }
+
 
 .tile{
 	margin: 20px;
@@ -122,3 +122,105 @@ footer{
 /* 
 	Evaluate 
 					*/
+
+
+.container {
+	text-align: center;
+	border-radius: 10px;
+	border: 1px dotted black;
+	width: 30%;
+	margin: auto;
+	margin-top: 100px;
+	padding: 15px;
+}
+
+#description {
+	text-align: left;
+	font-size: 20px;
+}
+#go {
+	text-align: center;
+}
+
+#go button {
+	font-size: 20px;
+	border-radius: 4px;
+	padding: 5px;
+	background-color: rgb(191, 144, 0);
+	color: white;
+}
+#question {
+	font-size: 24px;
+	text-align: left;
+}
+
+ #answers {
+ 	font-size: 16px;
+ 	text-align: left;
+ }
+
+ .back {
+ 	display: inline-block;
+ }
+
+.back button {
+	margin-top: 10px;
+	margin-left: auto;
+}
+ .next {
+ 	display: inline-block;
+ }
+
+ .next button {
+ 	margin-top: 10px;
+ 	background-color: rgb(191, 144, 0);
+ 	color: white;
+ 	border-radius: 4px;
+ }
+
+ #resource_button button{
+ 	margin-right: 10px;
+ }
+
+/* Resources */
+/*
+.resources {
+	text-align: center;
+	overflow: scroll;
+	height: -webkit-calc(100% -100px);
+}*/
+table{
+	border: 1px dotted black;
+	border-collapse: collapse;
+	border-radius: 5px;
+}
+iframe {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+ #body_wrapper td {
+ 	text-align: center;
+ }
+ #body_wrapper img {
+ 	height: 200px;
+
+ }
+.products {
+	text-decoration: underline;
+}
+tr:nth-child(even) {
+    background-color: #EFEFEF;
+}
+
+ th {
+ 	width: 300px;
+ }
+ #posts ul {
+ 	list-style: none;
+ 	margin: auto;
+ }
+ #posts ul li{
+ 	float: left;
+ 	width: 30%;
+ 	margin-left: 10px;
+ }
