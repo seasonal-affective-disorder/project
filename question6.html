@@ -44,50 +44,31 @@
 				</div>
 
 					<div id="answers">
-						<input type = "radio" 
-						name = "Answer" 
-						id = "answer1" 
-						value = "1" >
-						 Very Likely<br/>
-						<input type = "radio" 
-						name = "Answer" 
-						id = "answer2" 
-						value = "2">
-						 Somewhat Likely<br/>
-						<input type = "radio" 
-						name = "Answer" 
-						id = "answer3" 
-						value = "3"> Neutral<br/>
-						<input type = "radio" 
-						name = "Answer" 
-						id = "answer4" 
-						value = "4"> Somewhat Likely<br/>
-						<input type = "radio" 
-						name = "Answer" 
-						id = "answer5" 
-						value = "5"> Very Unlikely<br/>
+						<input type = "radio" name = "test" id = "answer1" value = "1" >Very Likely
+						<br/>
+						<input type = "radio" name = "test" id = "answer2" value = "2">Somewhat Likely
+						<br/>
+						<input type = "radio" name = "test" id = "answer3" value = "3"> Neutral
+						<br/>
+						<input type = "radio" name = "test" id = "answer4" value = "4">Somewhat Likely
+						<br/>
+						<input type = "radio" name = "test" id = "answer5" value = "5">Very Unlikely
+						<br/>
 					</div>
-
 					<div class = "back">
 						<a href="question5.html">
 							<button>Back</button>
 						</a>
 					</div>
-
 					<div class = "next">
-						<a href="results.html">
-							<button>Finish</button>
-						</a>
+							<button onclick="nextPage('results.html')">Next</button>
+						</div>
 					</div>
-
-				</a>
-			</div>
-       	<footer>
-            <a class="footer_tab" href="#">About Us</a>
-           	<a class="footer_tab" href="#">Contact Us</a>
-            <a class="footer_tab" href="#">Resources</a>
-        </footer>
-		</div>
-	</body>
-
-</html>
+					<footer>
+						<a class="footer_tab" href="#">About Us</a>
+						<a class="footer_tab" href="#">Contact Us</a>
+						<a class="footer_tab" href="#">Resources</a>
+					</footer>
+					<script src="project.js"></script>
+				</body>
+			</html>
