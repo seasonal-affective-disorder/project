@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>Question 1</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	</head>
+	<body>
+		<div id="header">
+            <ul>
+                <li><a id="logo" href="home.html">
+                        <img src="images/home.jpg" alt="home">
+                    </a> </li>
+                <li> <a class="menu_tab" href="#">Sleep</a> </li>
+                <li> <a class="menu_tab" href="#">Weather</a> </li>
+                <li> <a class="menu_tab" href="#">Activities</a> </li>
+                <li> <a class="menu_tab" href="evaluation.html">Evaluation</a> </li>
+                <li> <a class="menu_tab" href="#">Calendar</a> </li>
+                <li>
+                    <div class="dropdown">
+                        <button id="profile_tab" style="background: none; border: none;"> 
+                            <img src="images/profile.jpg" alt="profile" >
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">Log in</a>
+                        </div>
+                    </div> 
+                </li>
+                <li id="search_box" style="border:1px solid;">
+                    <input  type="text" placeholder="Search.." style="border:none;">
+                    <button style="height: 25px; background: none;border: none;" type="submit" onclick="">
+                        <i class="material-icons">search</i>
+                    </button>
+                </li>
+                
+            </ul>
+        </div>
+		<div class = "container">
+			<div id = "question">
+				<p>How often does the weather prevent you from doing activities you would otherwise enjoy?</p>
+			</div>
+			<div id = "answers">
+				<input type="radio" name="test"> Never
+				<br/>
+				<input type="radio" name="test"> Rarely
+				<br/>
+				<input type="radio" name="test"> Sometimes
+				<br/>
+				<input type="radio" name="test"> Often
+				<br/>
+				<input type="radio" name="test"> Always
+				<br/>
+			</div>
+			<div class = "back">
+				<a href = "evaluation.html"><button>Back</button></a>
+			</div>
+			<div class = "next">
+				<button onclick="nextPage('question2.html')">Next</button>
+			</div>
+		</div>
+		<footer>
+            <a class="footer_tab" href="#">About Us</a>
+            <a class="footer_tab" href="#">Contact Us</a>
+            <a class="footer_tab" href="#">Resources</a>
+		</footer>
+		<script src="project.js"></script>
+	</body>
+</html>
