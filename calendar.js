@@ -167,13 +167,16 @@ function addCal(sno){
     alert("Please enter time")
   }
   else{
+    var monthname=new Array("01","02","03","04","05","06","07","08","09","10","11","12");
     var date= new Date(event_date);
-    var time=new Date(event_time);
     var curr=new Date();
+    var curr_date = curr.getFullYear()+"-"+monthname[curr.getMonth()]+"-"+curr.getDate();
+    var curr1 = new Date(curr_date);
+    var curr_time=curr.getHours()+":"+curr.getSeconds()
     var date_ms =date.getTime();
-    var time_ms=time.getTime();
-    var curr_ms=curr.getTime();
-    if(date_ms < curr_ms|| (date_ms == curr_ms&&time_ms < curr_ms)){
+    var curr_ms=curr1.getTime();
+
+    if(date_ms < curr_ms|| (date_ms == curr_ms&&event_time < curr_time)){
       alert("Invalid Entry")
     }
     else{
@@ -188,7 +191,7 @@ function addCal(sno){
         }
 
         else{
-          alert("The activity is not available")
+          alert("The activity is not available at the choosen time.")
         }
       }
 
@@ -210,7 +213,7 @@ function addCal(sno){
         }
 
         else{
-          alert("The activity is not available")
+          alert("The activity is not available at the choosen time.")
         }
       }
 
@@ -231,7 +234,7 @@ function addCal(sno){
         }
 
         else{
-          alert("The activity is not available")
+          alert("The activity is not available at the choosen time.")
         }
       }
 
@@ -246,7 +249,7 @@ function addCal(sno){
         }
 
         else{
-          alert("The activity is not available")
+          alert("The activity is not available at the choosen time.")
         }
       }
 
@@ -264,7 +267,7 @@ function addCal(sno){
         }
 
         else{
-          alert("The activity is not available")
+          alert("The activity is not available at the choosen time.")
         }
       }
 

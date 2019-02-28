@@ -113,7 +113,8 @@ footer{
 .tile:hover
 {
 	margin: 20px;
-	box-shadow: 0px 1px 7px 0px rgb(106, 111, 109)
+	-webkit-filter: grayscale(100%) blur(3px);
+	filter: grayscale(100%) blur(3px);
 }
 
 /* 
@@ -317,7 +318,7 @@ td.not-current {
   color:#c0c0c0;;
 }
 td.normal {
-	color:gray;
+	color:black;
 }
 td.today {
   font-weight:700;
@@ -333,9 +334,11 @@ td .event {
 }
 
 td.mixed {
-	font-weight:700;
-  color:red;
-  font-size:1.5em;
+	background: black;
+	color:white;
+	border: 1px solid black;
+	border-radius:50%;
+	cursor: pointer;
 }
 thead td {
   border:none;
@@ -392,7 +395,7 @@ thead td {
 }
 
 input[type=date] {
-	width: 10%;
+	width: 15%;
 	margin: 0 5px;
   background-color: rgb(223, 221, 221);
   outline: none;
@@ -418,7 +421,7 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 input[type=time] {
-	width: 10%;
+	width: 15%;
 	margin: 0 5px;
   background-color: rgb(223, 221, 221);
   outline: none;
