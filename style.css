@@ -2,7 +2,7 @@
 	Global styling 
 					*/
 body {
-	overflow:hidden;
+	overflow-y: scroll;
 	text-align: center;
 	font-family: 'Source Sans Pro', sans-serif;
 }
@@ -75,16 +75,13 @@ body {
 
 #body_wrapper{
 	width: 100%;
-	height: -webkit-calc(100% - 100px);
-	overflow-y: scroll;
 }
 
 footer{
 	background: rgb(127, 96, 0);
 	height: 55.68px;
 	width: 100%;
-	position: absolute;
-	bottom: 0;
+	margin-top: 10%;
 }
 .footer_tab{
 	color:white;
@@ -224,3 +221,337 @@ tr:nth-child(even) {
  	width: 30%;
  	margin-left: 10px;
  }
+
+ /* Activities styling */
+/*
+#activities table {
+	margin-top: 50px;
+	width: 45%;
+	padding: 5px;
+	
+	overflow-y: scroll;
+	height: 50%;
+	display: block;
+}*/
+
+
+#events_wrapper {
+	margin-left: 30px;
+	width: 40%;
+	padding: 5px;
+	overflow-y: scroll;
+	height: 65%;
+	display: block;
+	float: left;
+}
+#activities th {
+	font-size: 24px;
+}
+
+#activities h1{
+	margin: 30px;
+text-align: left;
+}
+
+#activities p{
+	text-align: left;
+	margin: 30px;
+}
+
+#activities p a{
+	text-decoration: none;
+
+}
+
+#event_title a{
+	font-size: 20px;
+	margin-bottom: 5px;
+	text-decoration: none;
+	color: black;
+}
+
+#activities td {
+	padding: 5px;
+	text-align: left;
+}
+
+.add {
+	text-align: center;
+}
+
+.add button{
+	height: 30px;
+	width: 70px;
+	background-color: rgb(191, 144, 0);
+	color: white;
+	border-radius: 5px;
+}
+
+*, *:before, *:after {
+  box-sizing:border-box;
+}
+
+.calendar-wrapper {
+  width:50%;
+  	background: #E6E6FA;
+  margin-right: 70px;
+  border:1px solid rgb(220,220,255);
+  border-radius:5px;
+  float: right;
+	height: 70%;
+}
+table {
+	border:1px solid rgb(220,220,255);
+	border-radius:3px;
+  color: #444;
+  width:100%;
+}
+td {
+  height:43px;
+  text-align:center;
+  border:1px solid rgb(220,220,255);
+  width:100%/7;
+  height:100%/7;
+}
+td.not-current {
+  color:#c0c0c0;;
+}
+td.normal {
+	color:gray;
+}
+td.today {
+  font-weight:700;
+  color:rgb(40,40,59);
+  font-size:1.5em;
+}
+td .event {
+	background: black;
+	color:white;
+	border: 1px solid black;
+	border-radius:50%;
+	cursor: pointer;
+}
+
+td.mixed {
+	font-weight:700;
+  color:red;
+  font-size:1.5em;
+}
+thead td {
+  border:none;
+  color:rgb(40,40,59);
+  text-transform:uppercase;
+  font-size:1.5em;
+}
+#btnPrev {
+	margin-right: 100px;
+  &:before {
+    content:'\f104';
+    padding-right:4px;
+  }
+}
+#btnNext {
+	margin-left: 100px;
+  &:after {
+    padding-left:4px;
+    content:'\f105';
+  }
+}
+#btnPrev, #btnNext {
+  background:transparent;
+  border:none;
+  outline:none;
+  transition:all 0.3s ease;
+}
+#white_space{
+	height: 350px;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+	margin: auto;
+	text-align: left;
+  padding: 10px;
+  border: 1px solid #888;
+	width: 70%;
+	height:90%;
+	margin-bottom: 100px;
+}
+
+input[type=date] {
+	width: 10%;
+	margin: 0 5px;
+  background-color: rgb(223, 221, 221);
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  padding:3px;
+	color: black;
+}
+	input[type="date"]::-webkit-calendar-picker-indicator {
+    color: gray;
+	}
+        
+  input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    background-color: rgb(223, 221, 221);
+    color: black;
+    cursor: pointer;
+		}
+
+input[type="date"]::-webkit-outer-spin-button,
+input[type="date"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=time] {
+	width: 10%;
+	margin: 0 5px;
+  background-color: rgb(223, 221, 221);
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  padding:3px;
+	color: black;
+}
+
+input[type="time"]::-webkit-outer-spin-button,
+input[type="time"]::-webkit-inner-spin-button{
+	color: gray;
+}
+			
+input[type="time"]::-webkit-outer-spin-button,
+input[type="time"]::-webkit-inner-spin-button:hover {
+	background-color: rgb(223, 221, 221);
+	color: black;
+	cursor: pointer;
+	}
+
+	.details {
+		display: none; /* Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Sit on top */
+		padding-top: 100px; /* Location of the box */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: auto; /* Enable scroll if needed */
+		background-color: rgb(0,0,0); /* Fallback color */
+		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+	
+	/* Modal Content */
+	.details-content {
+		background-color: #fefefe;
+		margin: auto;
+		text-align: left;
+		padding: 10px;
+		border: 1px solid #888;
+		width: 30%;
+	}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Sleep styling */
+#sleep_wrapper {
+	display: block;
+}
+
+#sleep_log {
+	border: 1px dotted black;
+	border-radius: 5px;
+	margin: 20px;
+	width: 45%;
+	text-align: left;
+	padding: 10px;
+	font-size: 20px;
+	float: left;
+	margin-left: 30px;
+}
+
+#sleep_log input[type="submit"] {
+	background-color: rgb(191, 144, 0);
+	color: white;
+	border-radius: 5px;
+	font-size: 20px;
+	padding: 5px;
+	margin-top: 2px;
+	float: right;
+	cursor: pointer;
+}
+
+#sleep_wrapper input[type="time"] {
+	width: 40px;
+}
+#stats {
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#stats button {
+	font-size: 20px;
+	background-color: rgb(191, 144, 0);
+	color: white;
+	border-radius: 5px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+#goals {
+	margin-top: 30px;
+	margin-left: 40px;
+	float: left;
+	font-size: 20px;
+	text-align: left;
+	width: 45%;
+}
+
+#goals input[type="submit"] {
+	background-color: rgb(191, 144, 0);
+	color: white;
+	border-radius: 5px;
+	font-size: 20px;
+	padding: 5px;
+	margin-top: -55px;
+	cursor: pointer;
+	float: right;
+}
+
+#goaltime {
+	border: 1px dotted black;
+	border-radius: 5px;
+	width: 100%;
+	text-align: left;
+	padding: 10px;
+	font-size: 20px;
+}
+
+#goaltime h2 {
+	margin-top: 15px;
+}
