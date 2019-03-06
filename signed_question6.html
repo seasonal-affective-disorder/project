@@ -9,24 +9,27 @@
 		<div id = "web-page">
 			<div id="header">
             <ul>
-                <li><a id="logo" href="home.html">
+                <li><a id="logo" href="signed_user.html">
                         <img src="images/home.jpg" alt="home">
                     </a> </li>
-                <li> <a class="menu_tab" href="#">Sleep</a> </li>
-                <li> <a class="menu_tab" href="#">Weather</a> </li>
-                <li> <a class="menu_tab" href="activities.html">Activities</a> </li>
-                <li> <a class="menu_tab" href="evaluation.html">Evaluation</a> </li>
+					<li> <a class="menu_tab" href="signed_sleep.html">Sleep</a> </li>
+					<li> <a class="menu_tab" href="#">Weather</a> </li>
+					<li> <a class="menu_tab" href="signed_activities.html">Activities</a> </li>
+					<li> <a class="menu_tab" href="signed_evaluation.html"><b>Evaluation</b></a> </li>
                 <li> <a class="menu_tab" href="#">Calendar</a> </li>
                 <li>
-                    <div class="dropdown">
-                        <button id="profile_tab" style="background: none; border: none;"> 
-                            <img src="images/profile.jpg" alt="profile" >
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="#">Log in</a>
-                        </div>
-                    </div> 
-                </li>
+                        <div class="dropdown">
+                            <button id="profile_tab" style="background: none; border: none;"> 
+                                <img src="images/profile.jpg" alt="profile" >
+                            </button>
+                            <div class="dropdown-content">
+									<a onclick="openProf()">Profile</a>
+									<a onclick="signOut('regular_evaluation.html')">Sign Out</a>
+                            </div>
+                        </div> 
+                    </li>
+                    <li id="welcome" style="float:right; margin-top:10px;margin-right:-20px;">
+                    </li>
                 <li id="search_box" style="border:1px solid;">
                     <input  type="text" placeholder="Search.." style="border:none;">
                     <button style="height: 25px; background: none;border: none;" type="submit" onclick="">
@@ -36,14 +39,23 @@
                 
             </ul>
         </div>
-        </div>
-
-			<div class = "container">
+		</div>
+		<div id="wizard">
+				<ul id="status">
+				  <li style="margin-left: -5px;"></li>
+				  <li style="margin-left: 25px;"></li>
+				  <li style="margin-left: 25px;"></li>
+				  <li style="margin-left: 25px;"></li>
+				  <li style="margin-left: 25px;"></li>
+				  <li class="active" style="margin-left: 25px;"><p>Question 6</p></li>
+				</ul>
+		</div>
+			<div class = "container" style="height:47.5%;"> 
 				<div id="question">
 					<p>If it is cold outside, how likely are you to stay in?</p>
 				</div>
 
-					<div id="answers">
+					<div id="answers" style="margin-bottom: 10%;">
 						<input type = "radio" name = "test" id = "answer1" value = "1" >Very Likely
 						<br/>
 						<input type = "radio" name = "test" id = "answer2" value = "2">Somewhat Likely
@@ -56,19 +68,23 @@
 						<br/>
 					</div>
 					<div class = "back">
-						<a href="question5.html">
+						<a href="signed_question5.html">
 							<button>Back</button>
 						</a>
 					</div>
 					<div class = "next">
-							<button onclick="nextPage('results.html')">Next</button>
+							<button onclick="nextPage('signed_results.html')">Next</button>
 						</div>
 					</div>
 					<footer>
 						<a class="footer_tab" href="#">About Us</a>
 						<a class="footer_tab" href="#">Contact Us</a>
-						<a class="footer_tab" href="#">Resources</a>
+						<a class="footer_tab" href="signed_resources.html">Resources</a>
 					</footer>
 					<script src="project.js"></script>
+					<script>
+							document.getElementById('welcome').innerHTML = name;
+							document.getElementById('profile_tab').innerHTML=pic;
+				</script>
 				</body>
 			</html>

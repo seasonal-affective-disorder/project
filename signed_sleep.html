@@ -1,0 +1,107 @@
+<html>
+	<head>
+        <title>Seasonal Affective Disorder</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    </head>
+    <body>
+    	<div id="header">
+            <ul>
+                <li><a id="logo" href="signed_user.html">
+                        <img src="images/home.jpg" alt="home">
+                    </a> </li>
+                <li> <a class="menu_tab" href="signed_sleep.html"><b>Sleep</b></a> </li>
+                <li> <a class="menu_tab" href="#">Weather</a> </li>
+                <li> <a class="menu_tab" href="signed_activities.html">Activities</a> </li>
+                <li> <a class="menu_tab" href="signed_evaluation.html">Evaluation</a> </li>
+                <li> <a class="menu_tab" href="#">Calendar</a> </li>
+                <li>
+                        <div class="dropdown">
+                            <button id="profile_tab" style="background: none; border: none;">
+                                <img src="images/profile.jpg" alt="profile" >
+                            </button>
+                            <div class="dropdown-content">
+                                <a onclick="openProf()">Profile</a>
+                                <a onclick="signOut('regular_sleep.html')">Sign Out</a>
+                            </div>
+                        </div> 
+                    </li>
+                    <li id="welcome" style="float:right; margin-top:10px;margin-right:-20px;">
+                    </li>
+                <li id="search_box" style="border:1px solid;">
+                    <input  type="text" placeholder="Search.." style="border:none;">
+                    <button style="height: 25px; background: none;border: none;" type="submit" onclick="">
+                        <i class="material-icons">search</i>
+                    </button>
+                </li>
+                
+            </ul>
+        </div>
+        <div id = "sleep_wrapper">
+	        <div id = "sleep_log">
+                <h1>Log Your Sleep</h1>
+                <p>Add your sleep time for the last 3 days or more days upto a week.</p>
+                <span style="color:red;">*</span>Date: <input type="date" name="sleep" style="width: 20%;" id="sleep_date"><br/><br/>
+                <span style="color:red;">*</span>Slept from: <input type="time" name="bedtime" id="sleep_bedtime"> to <input type="time" name="waketime" id="sleep_waketime">
+				 <input type="submit" value="Log" onclick="logSleep(document.getElementById('sleep_date'),document.getElementById('sleep_bedtime'),document.getElementById('sleep_waketime'))">
+                <br/>
+                <br/>
+                <div id="sleep_history" style="height:90px;overflow-y:auto;display:none;">
+                </div>
+                <br/>
+				<hr>
+                <h2>Add a Nap</h2>
+                Add as many naps as you remember taking in the last three days.<br/><br/>
+				  Date: <input type="date" name="sleep" style="width:20%;" id="nap_date"><br/><br/>
+				  Slept from: <input type="time" id="nap_bedtime"> to <input type="time" id="nap_waketime">
+				 <input type="submit" value="Log" onclick="logNap(document.getElementById('nap_date'),document.getElementById('nap_bedtime'),document.getElementById('nap_waketime'))">
+            
+            <br/>
+                <br/>
+                <div id="nap_history" style="height:90px;overflow-y:auto;display:none;">
+                </div>
+                <br/>
+            </div>
+	        <div id = "goals">
+	        	<h1>Goals</h1>
+	        	<p>Regulating sleep schedules has been shown to help fight against the symptoms of SAD.<br/><br/>
+	        	Add your goals for your sleep schedule by entering your ideal bedtime and waketime below.</p>
+	        	<div id = "goaltime">
+	        		<h2>Ideal Sleep Times</h2>
+                    <span style="color:red;">*</span>Bedtime: <input type="time" id="goal_bedtime"><br/><br/>
+                    <span style="color:red;">*</span>Waketime: <input type="time" id="goal_waketime"><br/>
+					 <input type="submit" value="Enter" onclick="enterGoal(document.getElementById('goal_bedtime'),document.getElementById('goal_waketime'))">
+                     <br/>
+                     <br/>
+                     <div id="goal_entered" style="overflow-y:auto;display:none;">
+                     </div>
+                     <br/>
+                    </div>
+            </div>
+            <div id="stats">
+					<button style="margin-top: 20px;" onclick="showStats('stats_modal')">See Sleep Statistics</button>
+                </div>
+                <div id="stats_modal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="stats-content">
+                      <span class="close">&times;</span>
+
+                    </div>
+                  
+                  </div>
+	    </div>
+        <footer>
+            <a class="footer_tab" href="#">About Us</a>
+            <a class="footer_tab" href="#">Contact Us</a>
+            <a class="footer_tab" href="signed_resources.html">Resources</a>
+        </footer>
+        <script src="project.js"></script>
+            <script>
+
+                document.getElementById('welcome').innerHTML = name;
+                document.getElementById('profile_tab').innerHTML=pic;
+            </script>
+   	</body>
+</html>
