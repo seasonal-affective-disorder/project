@@ -1,0 +1,72 @@
+<hmtl>
+        <head>
+            <title>Seasonal Affective Disorder</title>
+            <link rel="stylesheet" type="text/css" href="style.css"/>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        </head>
+        <body>
+            <div id="header">
+                <ul>
+                    <li><a id="logo" href="signed_user.html">
+                            <img src="images/home.jpg" alt="home">
+                        </a> </li>
+                    <li> <a class="menu_tab" href="signed_sleep.html">Sleep</a> </li>
+                    <li> <a class="menu_tab" href="#">Weather</a> </li>
+                    <li> <a class="menu_tab" href="signed_activities.html">Activities</a> </li>
+                    <li> <a class="menu_tab" href="signed_evaluation.html">Evaluation</a> </li>
+                    <li> <a class="menu_tab" href="#">Calendar</a> </li>
+                    <li>
+                        <div class="dropdown">
+                            <button id="profile_tab" style="background: none; border: none;">
+                                <img src="images/profile.jpg" alt="profile" >
+                            </button>
+                            <div class="dropdown-content">
+                                <a onclick="openProf()">Profile</a>
+                                <a onclick="signOut('regular_home.html')">Sign Out</a>
+                            </div>
+                        </div> 
+                    </li>
+                    <li id="welcome" style="float:right; margin-top:10px;margin-right:-20px;">
+                    </li>
+                    <li id="search_box" style="border:1px solid;">
+                        <input  type="text" placeholder="Search.." style="border:none;">
+                        <button style="height: 25px; background: none;border: none;" type="submit" onclick="">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </li>
+                    
+                </ul>
+            </div>
+        <div id="prof_body" style="height:67%;">
+            <div id="left_prof">
+                <img id="pro_pic" src="images/wildcat.jpg">
+                <p style="text-align: left;">
+                    <button style="float: right;border:none;background: none;cursor: pointer;mar" onclick="alert('Edit option not available in this version')">
+                        <i class="material-icons" >edit</i></button>
+                    <b>Name</b>: Wildcat<br/>
+                    <b>Bio</b>: CS undergrad student at Northwestern University. My interests include User Interfaces and playing outside with friends. </p>
+            </div>
+            <div id="right_prof" style="text-align:left;">
+                    <span><h1>Personal Info</h1></span><br/>
+                    <span><b>Phone</b>: (+1) 464-374-9087</span><br/>
+                    <span><b>Address</b>: 633 Clark St, Evanston, IL 60208</span><br/>
+                    <span><b>Email</b>: wildcat@hci.com</span><br/>
+                    <span><b>Date of Birth</b>: 1st Aug 1997</span><br/>
+                    <button id="results_view" onclick="">View SAD Evaluation Report</button>
+                    <button id="results_view" onclick="">View Sleep Statistic Report</button>
+            </div>
+        </div>
+            <footer>
+                <a class="footer_tab" href="#">About Us</a>
+                <a class="footer_tab" href="#">Contact Us</a>
+                <a class="footer_tab" href="signed_resources.html">Resources</a>
+            </footer>
+            <script src="project.js"></script>
+            <script>
+
+                document.getElementById('welcome').innerHTML = name;
+                document.getElementById('profile_tab').innerHTML=pic;
+            </script>
+        </body>
+    </hmtl>

@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>Question 2</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	</head>
+	<body>
+		<div id="header">
+            <ul>
+                <li><a id="logo" href="signed_user.html">
+                        <img src="images/home.jpg" alt="home">
+                    </a> </li>
+					<li> <a class="menu_tab" href="signed_sleep.html">Sleep</a> </li>
+					<li> <a class="menu_tab" href="#">Weather</a> </li>
+					<li> <a class="menu_tab" href="signed_activities.html">Activities</a> </li>
+					<li> <a class="menu_tab" href="signed_evaluation.html"><b>Evaluation</b></a> </li>
+                <li> <a class="menu_tab" href="#">Calendar</a> </li>
+                <li>
+                        <div class="dropdown">
+                            <button id="profile_tab" style="background: none; border: none;"> 
+                                <img src="images/profile.jpg" alt="profile" >
+                            </button>
+                            <div class="dropdown-content">
+									<a onclick="openProf()">Profile</a>
+									<a onclick="signOut('regular_evaluation.html')">Sign Out</a>
+                            </div>
+                        </div> 
+                    </li>
+                    <li id="welcome" style="float:right; margin-top:10px;margin-right:-20px;">
+                    </li>
+                <li id="search_box" style="border:1px solid;">
+                    <input  type="text" placeholder="Search.." style="border:none;">
+                    <button style="height: 25px; background: none;border: none;" type="submit" onclick="">
+                        <i class="material-icons">search</i>
+                    </button>
+                </li>
+                
+            </ul>
+		</div>
+		<div id="wizard">
+				<ul id="status">
+				  <li style="margin-left: -5px;"></li>
+				  <li class="active" style="margin-left: 25px;"><p>Question 2</p></li>
+				  <li style="margin-left: 25px;"></li>
+				  <li style="margin-left: 25px;"></li>
+				  <li style="margin-left: 25px;"></li>
+				  <li style="margin-left: 25px;"></li>
+				</ul>
+		</div>
+		<div class = "container">
+			<div id = "question">
+				<p>How strongly do you agree with the statement: 'I feel fatigued during the winter time'?</p>
+			</div>
+			<div id = "answers">
+				<input type="radio" name="test"> Strongly Disagree
+				<br/>
+				<input type="radio" name="test"> Disagree
+				<br/>
+				<input type="radio" name="test"> Neither Agree nor Disagree
+				<br/>
+				<input type="radio" name="test"> Agree
+				<br/>
+				<input type="radio" name="test"> Strongly Agree
+				<br/>
+			</div>
+			<div class = "back">
+				<a href = "signed_question1.html"><button>Back</button></a>
+			</div>
+			<div class = "next">
+					<button onclick="nextPage('signed_question3.html')">Next</button>
+				</div>
+			</div>
+			<footer>
+				<a class="footer_tab" href="#">About Us</a>
+				<a class="footer_tab" href="#">Contact Us</a>
+				<a class="footer_tab" href="signed_resources.html">Resources</a>
+			</footer>
+			<script src="project.js"></script>
+			<script>
+					document.getElementById('welcome').innerHTML = name;
+					document.getElementById('profile_tab').innerHTML=pic;
+		</script>
+		</body>
+	</html>
