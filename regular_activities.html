@@ -8,23 +8,53 @@
 	<body>
 		<div id="header">
             <ul>
-                <li><a id="logo" href="home.html">
+                <li><a id="logo" href="regular_home.html">
                         <img src="images/home.jpg" alt="home">
                     </a> </li>
-                <li> <a class="menu_tab" href="#">Sleep</a> </li>
+                <li> <a class="menu_tab" href="regular_sleep.html">Sleep</a> </li>
                 <li> <a class="menu_tab" href="#">Weather</a> </li>
-                <li> <a class="menu_tab" href="activities.html">Activities</a> </li>
-                <li> <a class="menu_tab" href="evaluation.html">Evaluation</a> </li>
+                <li> <a class="menu_tab" href="regular_activities.html"><b>Activities</b></a> </li>
+                <li> <a class="menu_tab" href="regular_evaluation.html">Evaluation</a> </li>
                 <li> <a class="menu_tab" href="#">Calendar</a> </li>
                 <li>
-                    <div class="dropdown">
-                        <button id="profile_tab" style="background: none; border: none;"> 
-                            <img src="images/profile.jpg" alt="profile" >
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="#">Log in</a>
-                        </div>
-                    </div> 
+                        <div class="dropdown">
+                                <button id="profile_tab" style="background: none; border: none;"> 
+                                    <img src="images/profile.jpg" alt="profile" >
+                                </button>
+                                <div class="dropdown-content">
+                                    <a onclick="sel('sign_in')">Log in</a>
+                                </div>
+                            </div>
+                            <div id="sign_in" class="sign_modal">
+                                    <!-- Modal content -->
+                                    <div class="sign_modal-content">
+                                            <span class="close" onclick="cls(document.getElementsByClassName('close'))">&times;</span>
+                                      <br/>
+                                      <br/>
+                                      <br/>
+                                      <b>LOGIN</b>
+                                      <br/>
+                                      <br/>
+                                      <br/>
+                                      <div id="cred_field">
+                                        <span style="color:red;">*</span>
+                                        <input type="text" name="cred" id="e_id" placeholder="Email">
+                                        <br/>
+                                        <span style="color:red;">*</span>
+                                        <input type="password" name="cred" id="psw" placeholder="Password">
+                                        
+                                      </div>
+                                      <input type="checkbox" onclick="myFunction(document.getElementById('psw'))" style="margin-left:40%;">Show Password
+                                        <br/><button type="submit" style="height: 40px;
+                                        width: 120px;
+                                        margin:30 0px;
+                                        background-color: rgb(191, 144, 0);
+                                        color: white;" onclick="openUser('signed_activities.html',document.getElementById('e_id').value,document.getElementById('psw').value)">Login</button>
+                                        <br/>
+                                        <span class="forgot_psw"><a href="#"  style="text-decoration: none;color: black;">Forgot your password  </a></span>|
+                                        <span class="sign_up"><a href="#"  style="text-decoration: none; color:black;">  Signup</a></span>
+                                    </div>
+                                  </div> 
                 </li>
                 <li id="search_box" style="border:1px solid;">
                     <input  type="text" placeholder="Search.." style="border:none;">
@@ -38,15 +68,16 @@
 
         <div id = "activities">
             <h1>Activities</h1>
-            <p>It is easy to lose motivation and get cooped up inside during the winter months. However, just because it is cold outside, doesn't mean ther aren't fun activities to do. Below, we have selected a few. If you do not like any of these options or want to see more, check out these links: <a href="https://www.choosechicago.com/things-to-do/free-and-cheap-things-to-do/">Free & Cheap Things to Do in Chicago</a>, <a href="https://www.ticketmaster.com/discover/concerts">Upcoming Concerts Nearby</a>, <a href="https://nurecreation.com/schedule.aspx?path=groupx">SPAC Exercise Classes</a></p>
+            <p>Winters are not meant to be spent inside. Add a fun activity to your calander.</p>
             <div id = "events_wrapper">
                 <table cellspacing="0" style="border:none;">
                     <tr>
                         <td>
-                            <div id = "event_title"><a href = "https://www.artic.edu">Art Institute of Chicago</a></div>
+                            <div id = "event_title">Art Institute of Chicago</div>
                             <i>Price</i>: Free with Wildcard
                             <br/><i>When</i>: Open everyday 10:30-17:00
                             <br/><i>Address</i>: 111 S Michigan Ave, Chicago, IL
+                            
                         </td>
                         <td>
                             <div class = "add">
@@ -57,10 +88,11 @@
                                     <div class="modal-content">
                                       <span class="close">&times;</span>
                                       <h3>Art Institute of Chicago</h3>
-                                      <img src="images/art_institute.jpg" style="float:right;height:80%;width:50%;margin-right: 3%;"/>
+                                      <img src="images/art_institute.jpg" style="float:right;height:80%;width:50%;margin: 0 3%;"/>
                                       <br/>Free with Wildcard
                                       <br/>Open everyday 10:30-17:00
                                       <br/>111 S Michigan Ave, Chicago, IL
+                                      <br/><br/>On Michigan Avenue, in the heart of Chicago’s historic downtown, between the iconic lions—frankly named "stands in an attitude of defiance" and "on the prowl"—lies nearly a million square feet and approximately 330,000 pieces of art to explore. These works span a wide stretch of time, ranging from antiquity to modernity. 
                                       <br/><br/>
                                       <span style="color:red;">*</span>Date:<input type="date" name="event" id="event_date1">
                                         <span style="color:red;">*</span>Time:<input type="time" name="event" id="event_time1"> 
@@ -69,7 +101,7 @@
                                         margin-top:30px;
                                         background-color: rgb(191, 144, 0);
                                         color: white;
-                                        border-radius: 5px;" onclick="addCal(1)">
+                                        border-radius: 5px;" onclick="alert('Sign in to add to your calendar')">
                                     </div>
                                   
                                   </div>
@@ -81,13 +113,13 @@
 
                                     </div>
                                   </div>
-
+                                  <button id="more" onclick="window.open('https://www.artic.edu', '_blank')">More</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <div id = "event_title"><a href = "https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park10.html">Ice Skating in Millenium Park</a></div>
+                            <div id = "event_title">Ice Skating in Millenium Park</div>
                             <i>Price</i>: Free admission, Skate Rentals: $12-14
                             <br/><i>When</i>: Mon-Thurs: 12:00-20:00, Fri: 12:00-22:00, Weekend: 10:00-21:00
                             <br/><i>Address</i>: 1 N Michigan Ave, Chicago, IL
@@ -101,11 +133,12 @@
                                     <div class="modal-content">
                                       <span class="close">&times;</span>
                                       <h3>Ice Skating in Millenium Park</h3>
-                                      <img src="images/ice_skating.jpg" style="float:right;height:80%;width:50%;margin-right: 3%;"/>
+                                      <img src="images/ice_skating.jpg" style="float:right;height:80%;width:50%;margin:0 3%;"/>
                                       <br/>Free admission, Skate Rentals: $12-14
                                         <br/>Mon-Thurs: 12:00-20:00, Fri: 12:00-22:00, Weekend: 10:00-21:00
                                         <br/>1 N Michigan Ave, Chicago, IL
-                                        <br/><br/>
+                                      <br/><br/>Whether you're a pro on skates or still just a little bit clumsy, the iconic skating rink in Millennium Park is a must-stop for a spin on the ice—not to mention breathtaking views of the downtown city skyline and the magical sight of all those holiday lights reflected on The Bean's shimmering surface.
+                                      <br/><br/>
                                         <span style="color:red;">*</span>Date:<input type="date" name="event" id="event_date2">
                                         <span style="color:red;">*</span>Time:<input type="time" name="event" id="event_time2"> 
                                         <br/><input type="submit" value="Add to Calendar" style="height: 30px;
@@ -113,7 +146,7 @@
                                         margin-top:30px;
                                         background-color: rgb(191, 144, 0);
                                         color: white;
-                                        border-radius: 5px;" onclick="addCal(2)">
+                                        border-radius: 5px;" onclick="alert('Sign in to add to your calendar')">
                                     </div>
                                   
                                   </div>
@@ -125,12 +158,13 @@
 
                                     </div>
                                   </div>
+                                  <button id="more" onclick="window.open('https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park10.html', '_blank')">More</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <div id = "event_title"><a href = "https://garfieldconservatory.org">Garfield Park Conservatory</a></div>
+                            <div id = "event_title">Garfield Park Conservatory</div>
                             <i>Price</i>: Free (donation recommended)
                             <br/><i>When</i>: Open everyday 9:00-17:00 (Wed 9:00-20:00)
                             <br/><i>Address</i>: 300 N Central Park Ave, Chicago, IL
@@ -144,11 +178,12 @@
                                     <div class="modal-content">
                                       <span class="close">&times;</span>
                                       <h3>Garfield Park Conservatory</h3>
-                                      <img src="images/gp.jpg" style="float:right;height:80%;width:50%;margin-right: 3%;"/>
+                                      <img src="images/gp.jpg" style="float:right;height:80%;width:50%;margin:0 3%;"/>
                                       <br/>Free (donation recommended)
                                         <br/>Open everyday 9:00-17:00 (Wed 9:00-20:00)
                                         <br/>300 N Central Park Ave, Chicago, IL
-                                        <br/><br/>
+                                        <br/><br/>Often referred to as "landscape art under glass," The Garfield Park Conservatory is one of the largest and most stunning conservatories in the nation, where thousands of plant species are on display throughout eight rooms in this magnificent facility. Traveling through the conservatory allows visitors to experience lush flora and tropical temperatures away from the hustle and bustle of Chicago. Don’t forget to visit the 12 acres of stunning outdoor gardens.
+                                      <br/><br/>
                                         <span style="color:red;">*</span>Date:<input type="date" name="event" id="event_date3">
                                         <span style="color:red;">*</span>Time:<input type="time" name="event" id="event_time3"> 
                                         <br/><input type="submit" value="Add to Calendar" style="height: 30px;
@@ -156,7 +191,7 @@
                                         margin-top:30px;
                                         background-color: rgb(191, 144, 0);
                                         color: white;
-                                        border-radius: 5px;" onclick="addCal(3)">
+                                        border-radius: 5px;" onclick="alert('Sign in to add to your calendar')">
                                     </div>
                                   
                                   </div>
@@ -167,12 +202,13 @@
 
                                     </div>
                                   </div>
+                                  <button id="more" onclick="window.open('https://garfieldconservatory.org', '_blank')">More</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <div id = "event_title"><a href = "https://www.lockedchicago.com">Escape Room</a></div>
+                            <div id = "event_title">Escape Room</div>
                             <i>Price</i>: $32.95
                             <br/><i>When</i>: Open everyday 10:00-23:00
                             <br/><i>Address</i>: 1820 Davis St Suite 151, Evanston, IL
@@ -186,10 +222,11 @@
                                     <div class="modal-content">
                                       <span class="close">&times;</span>
                                       <h3>Escape Room</h3>
-                                      <img src="images/escape.JPG" style="float:right;height:80%;width:50%;margin-right: 3%;"/>
+                                      <img src="images/escape.JPG" style="float:right;height:80%;width:50%;margin:0 3%;"/>
                                        <br/>$32.95
                                       <br/>Open everyday 10:00-23:00
                                       <br/>820 Davis St Suite 151, Evanston, IL
+                                      <br/><br/>Lock Chicago provides unique Escape Rooms and Virtual Reality experiences perfect for team building, family, and friends of all ages! There are 3 Escape Rooms and a Virtual Reality Lounge which can be reserved for your group privately or publicly. Unlike other escape rooms teams here aren't physically locked in a room, rather they are working together to complete a mission before time expires.
                                       <br/><br/>
                                       <span style="color:red;">*</span>Date:<input type="date" name="event" id="event_date4">
                                       <span style="color:red;">*</span>Time:<input type="time" name="event" id="event_time4"> 
@@ -198,7 +235,7 @@
                                         margin-top:30px;
                                         background-color: rgb(191, 144, 0);
                                         color: white;
-                                        border-radius: 5px;" onclick="addCal(4)">
+                                        border-radius: 5px;" onclick="alert('Sign in to add to your calendar')">
                                     </div>
                                   
                                   </div>
@@ -209,12 +246,13 @@
 
                                     </div>
                                   </div>
+                                  <button id="more" onclick="window.open('https://www.lockedchicago.com', '_blank')">More</button>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <div id = "event_title"><a href = "https://bridgeportart.com/3rd-fridays/">Open Studio at Bridgeport Art Center</a></div>
+                            <div id = "event_title">Open Studio at Bridgeport Art Center</div>
                             <i>Price</i>: Free
                             <br/><i>When</i>: 3rd Friday of every month, 7:00-22:00
                             <br/><i>Address</i>: 1200 W 35th St, Chicago, IL
@@ -228,10 +266,12 @@
                                     <div class="modal-content">
                                       <span class="close">&times;</span>
                                       <h3>Open Studio at Bridgeport Art Center</h3>
-                                      <img src="images/bridgeport.jpg" style="float:right;height:80%;width:50%;margin-right: 3%;"/>
+                                      <img src="images/bridgeport.jpg" style="float:right;height:80%;width:50%;margin:0 3%;"/>
                                         <br/>Free
                                         <br/>3rd Friday of every month, 7:00-22:00
                                         <br/>1200 W 35th St, Chicago, IL
+                                        <br/><br/>
+                                        The Bridgeport Art Center is the premier event center in Chicago.  Whether your wedding or corporate event is hosted in the Skyline Loft with sweeping skyline views, or in our beautiful ground floor Sculpture Garden event space, you will find it’s Chicago’s hottest space now. Attend open studios at Bridgeport center this winter.
                                         <br/><br/>
                                         <span style="color:red;">*</span>Date:<input type="date" name="event" id="event_date5">
                                         <span style="color:red;">*</span>Time:<input type="time" name="event" id="event_time5"> 
@@ -240,7 +280,7 @@
                                         margin-top:30px;
                                         background-color: rgb(191, 144, 0);
                                         color: white;
-                                        border-radius: 5px;" onclick="addCal(5)">
+                                        border-radius: 5px;" onclick="alert('Sign in to add to your calendar')">
                                         
                                     </div>
                                   
@@ -251,29 +291,29 @@
 
                                     </div>
                                   </div>
+                                  <button id="more" onclick="window.open('https://bridgeportart.com/3rd-fridays/', '_blank')">More</button>
                             </div>
                         </td>
                     </tr>
                 </table>
             </div>
         </div>
-        <div class="calendar-wrapper" style="border:1px solid black;border-radius: 5px;height:65%;padding:10px;">
+        <div class="calendar-wrapper" style="border:1px solid black;border-radius: 5px;height:82%;padding:10px;margin-top:-110px;">
       <button id="btnPrev" type="button"><i class="material-icons">
         keyboard_arrow_left</i></button>
         <button id="btnNext" type="button"><i class="material-icons">
             keyboard_arrow_right</i></button>
       <div id="divCal"></div>
     </div>
-
     <div id="white_space">
     </div>
 
         <footer>
             <a class="footer_tab" href="#">About Us</a>
             <a class="footer_tab" href="#">Contact Us</a>
-            <a class="footer_tab" href="#">Resources</a>
+            <a class="footer_tab" href="regular_resources.html">Resources</a>
         </footer>
-        <script src="calendar.js"></script>
+        <script src="regular_calendar.js"></script>
         <script src="project.js"></script>
 	</body>
 </html>
