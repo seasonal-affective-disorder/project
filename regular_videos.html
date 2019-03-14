@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Resource Videos</title>
+		 <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	</head>
+	<body>
+		<div id="header">
+            <ul>
+                <li><a id="logo" href="regular_home.html">
+                        <img src="images/home.jpg" alt="home">
+                    </a> </li>
+                <li> <a class="menu_tab" href="regular_sleep.html">Sleep</a> </li>
+                <li> <a class="menu_tab" href="#">Weather</a> </li>
+                <li> <a class="menu_tab" href="regular_activities.html">Activities</a> </li>
+                <li> <a class="menu_tab" href="regular_evaluation.html">Evaluation</a> </li>
+                <li> <a class="menu_tab" href="#">Calendar</a> </li>
+                <li>
+						<div class="dropdown">
+								<button id="profile_tab" style="background: none; border: none;"> 
+									<img src="images/profile.jpg" alt="profile" >
+								</button>
+								<div class="dropdown-content">
+									<a onclick="sel('sign_in')">Log in</a>
+								</div>
+							</div>
+							<div id="sign_in" class="sign_modal">
+									<!-- Modal content -->
+									<div class="sign_modal-content">
+									  <span class="close" onclick="cls(document.getElementsByClassName('close'))">&times;</span>
+									  <br/>
+									  <br/>
+									  <br/>
+									  <b>LOGIN</b>
+									  <br/>
+									  <br/>
+									  <br/>
+									  <div id="cred_field">
+										<span style="color:red;">*</span>
+										<input type="text" name="cred" id="e_id" placeholder="Email">
+										<br/>
+										<span style="color:red;">*</span>
+										<input type="password" name="cred" id="psw" placeholder="Password">
+										
+									  </div>
+									  <input type="checkbox" onclick="myFunction(document.getElementById('psw'))" style="margin-left:40%;">Show Password
+										<br/><button type="submit" style="height: 40px;
+										width: 120px;
+										margin:30 0px;
+										background-color: rgb(191, 144, 0);
+										color: white;" onclick="openUser('signed_resources.html',document.getElementById('e_id').value,document.getElementById('psw').value)">Login</button>
+										<br/>
+										<span class="forgot_psw"><a href="#"  style="text-decoration: none;color: black;">Forgot your password  </a></span>|
+										<span class="sign_up"><a href="#"  style="text-decoration: none; color:black;">  Signup</a></span>
+									</div>
+								  </div> 
+                </li>
+                <li id="search_box" style="border:1px solid;">
+                    <input  type="text" placeholder="Search.." style="border:none;">
+                    <button style="height: 25px; background: none;border: none;" type="submit" onclick="">
+                        <i class="material-icons">search</i>
+                    </button>
+                </li>
+                
+            </ul>
+        </div>
+	<div class = "resource_videos">
+		<h1>Videos</h1>
+		<p>Below are videos that provide useful information about symptoms of SAD and methods to combat it.</p>
+		<div class = "videos">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/LHLg3EIH1xY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/BOWgMW9Zjfg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/yriHm0r5YAA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/lld7lFZm-m0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>	
+	</div>
+	<footer>
+            <a class="footer_tab" href="#">About Us</a>
+            <a class="footer_tab" href="#">Contact Us</a>
+            <a class="footer_tab" href="regular_resources.html">Resources</a>
+		</footer>
+		<script src="project.js"></script>
+	</body>
+</html>
