@@ -294,11 +294,11 @@ function close_d() {
 function view_details(){
   var content;
   if (eventName[s_no-1] == "Ice Skating in Millenium Park") {
-  	content="<span class='close' onclick='close_d()'>&times;</span>Event Added<br/><h3>"+eventName[s_no-1]+"</h3><br/>"+eventCost[s_no-1]+"<br/>"+event_date+"<br/>"+tConv24(event_time)+"<br/>"+eventAddress[s_no-1]+"<br/></br><button onclick=\"window.open('https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park10.html', '_blank')\">Get Tickets!</button>";
+  	content="<span class='close' onclick='close_d()'>&times;</span>Event Added<br/><h3>"+eventName[s_no-1]+"</h3><br/>"+eventCost[s_no-1]+"<br/>"+event_date+"<br/>"+tConv24(event_time)+"<br/>"+eventAddress[s_no-1]+"<br/></br><button style='width:100px;' onclick=\"window.open('https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park10.html', '_blank')\">Get Tickets!</button>";
   	document.getElementById("details-content"+s_no).innerHTML=content;
   }
   else if (eventName[s_no-1] == "Escape Room") {
-  	content="<span class='close' onclick='close_d()'>&times;</span>Event Added<br/><h3>"+eventName[s_no-1]+"</h3><br/>"+eventCost[s_no-1]+"<br/>"+event_date+"<br/>"+tConv24(event_time)+"<br/>"+eventAddress[s_no-1]+"<br/></br><button onclick=\"window.open('https://www.lockedchicago.com', '_blank')\">Get Tickets!</button>";
+  	content="<span class='close' onclick='close_d()'>&times;</span>Event Added<br/><h3>"+eventName[s_no-1]+"</h3><br/>"+eventCost[s_no-1]+"<br/>"+event_date+"<br/>"+tConv24(event_time)+"<br/>"+eventAddress[s_no-1]+"<br/></br><button style='width:100px;' onclick=\"window.open('https://www.lockedchicago.com', '_blank')\">Get Tickets!</button>";
   	document.getElementById("details-content"+s_no).innerHTML=content;
   }
   else {
