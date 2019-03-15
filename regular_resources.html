@@ -1,0 +1,114 @@
+<html>
+	<head>
+        <title>Seasonal Affective Disorder</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    </head>
+    <body>
+    	<div id="header">
+            <ul>
+                <li><a id="logo" href="regular_home.html">
+                        <img src="images/home.jpg" alt="home">
+                    </a> </li>
+                <li> <a class="menu_tab" href="regular_sleep.html"><b>Sleep</b></a> </li>
+                <li> <a class="menu_tab" href="#">Weather</a> </li>
+                <li> <a class="menu_tab" href="regular_activities.html">Activities Calendar</a> </li>
+                <li> <a class="menu_tab" href="regular_evaluation.html">Evaluation</a> </li>
+                <li>
+                    <div class="dropdown">
+                            <button id="profile_tab" style="background: none; border: none;"> 
+                                <img src="images/profile.jpg" alt="profile" >
+                            </button>
+                            <div class="dropdown-content">
+                                <a onclick="sel('sign_in')">Log in</a>
+                            </div>
+                        </div>
+						<div class="dropdown">
+								<button id="profile_tab" style="background: none; border: none;"> 
+									<img src="images/profile.jpg" alt="profile" >
+								</button>
+								<div class="dropdown-content">
+									<a onclick="sel('sign_in')">Log in</a>
+								</div>
+							</div>
+							<div id="sign_in" class="sign_modal">
+									<!-- Modal content -->
+									<div class="sign_modal-content">
+									  <span class="close" onclick="cls(document.getElementsByClassName('close'))">&times;</span>
+									  <br/>
+									  <br/>
+									  <br/>
+									  <b>LOGIN</b>
+									  <br/>
+									  <br/>
+									  <br/>
+									  <div id="cred_field">
+										<span style="color:red;">*</span>
+										<input type="text" name="cred" id="e_id" placeholder="Email">
+										<br/>
+										<span style="color:red;">*</span>
+										<input type="password" name="cred" id="psw" placeholder="Password">
+										
+									  </div>
+									  <input type="checkbox" onclick="myFunction(document.getElementById('psw'))" style="margin-left:40%;">Show Password
+										<br/><button type="submit" style="height: 40px;
+										width: 120px;
+										margin:30 0px;
+										background-color: rgb(191, 144, 0);
+										color: white;" onclick="openUser('signed_resources.html',document.getElementById('e_id').value,document.getElementById('psw').value)">Login</button>
+										<br/>
+										<span class="forgot_psw"><a href="#"  style="text-decoration: none;color: black;">Forgot your password  </a></span>|
+										<span class="sign_up"><a href="#"  style="text-decoration: none; color:black;">  Signup</a></span>
+									</div>
+								  </div> 
+                </li>
+                <li id="search_box" style="border:1px solid;">
+                    <input  type="text" placeholder="Search.." style="border:none;">
+                    <button style="height: 25px; background: none;border: none;" type="submit" onclick="">
+                        <i class="material-icons">search</i>
+                    </button>
+                </li>
+                
+            </ul>
+        </div>
+		<div id = "body_wrapper" style="margin-left:30px; height:60%">
+			<div style="text-align:left;">
+				<h1>Resources</h1>
+				<p>The symptoms of SAD can be hard to deal with, but luckily there are resources available to help combat the symptoms.</p>
+			</div>
+			<div class = "resource_tiles">
+				<div class = "tile">
+					<a href="regular_videos.html">
+						<figure>
+							<img src = "https://t2.rbxcdn.com/14f9ed7127b549e4c2d2a33ebe7482b9">
+							<figcaption>Watch Videos Relating to SAD</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class = "tile">
+					<a href="regular_products.html">
+						<figure>
+							<img src = "https://cdn.shopify.com/s/files/1/1452/7936/products/VT-32_Hero-1_RT-Original_2048x.jpg?v=1541161657">
+							<figcaption>Find Products Designed to Combat SAD</figcaption>
+						</figure>
+					</a>
+				</div>
+				<div class = "tile">
+					<a href="regular_instagrams.html">
+						<figure>
+							<img src = "https://i.pinimg.com/originals/f9/aa/6e/f9aa6ec13014a2585a733d9ea6bf2ecc.jpg">
+							<figcaption>Follow Social Medias that Highlight Winter's Beauty</figcaption>
+						</figure>
+					</a>
+				</div>
+			</div>
+		</div>
+		<footer>
+            <a class="footer_tab" href="#">About Us</a>
+            <a class="footer_tab" href="#">Contact Us</a>
+            <a class="footer_tab" href="regular_resources.html">Resources</a>
+		</footer>
+		<script src="project.js"></script>
+	</body>
+</html>
