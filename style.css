@@ -1,13 +1,23 @@
 /* 
 	Global styling 
 					*/
+/* 
+	Global styling 
+					*/
+
+html {
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+}
+
+
 body {
 	overflow-y: scroll;
 	text-align: center;
-	
 	font-family: 'Source Sans Pro', sans-serif;
 	
 }
+
 
 #header{
 	box-shadow: 0 8px 6px -6px black;
@@ -232,6 +242,7 @@ text-align: left;
 
  #resource_button button{
  	margin-right: 10px;
+ 	width: 100px;
  }
  #wizard #status {
 	margin-left: 37.5%; margin-top: 6%;
@@ -270,7 +281,6 @@ text-align: left;
 
 
 /* Resources */
-/*
 .resources {
 	text-align: center;
 	overflow: scroll;
@@ -366,7 +376,8 @@ table{
  	width: 30%;
  	margin-left: 10px;
  }
-/* Activities styling */
+
+ /* Activities styling */
 /*
 #activities table {
 	margin-top: 50px;
@@ -429,6 +440,7 @@ text-align: left;
 	background-color: rgb(191, 144, 0);
 	color: white;
 	border-radius: 5px;
+	cursor: pointer;
 }
 #more{
 	height: 30px;
@@ -437,6 +449,7 @@ text-align: left;
 	color: white;
 	border-radius: 5px;
 	margin-top: 10px;
+	cursor: pointer;
 }
 
 *, *:before, *:after {
@@ -663,7 +676,8 @@ Sleep
 
 #sleep_wrapper {
 	display: block;
-	height:70%;
+	height:90%;
+	margin-top:30px;
 }
 
 #sleep_log {
@@ -672,7 +686,7 @@ Sleep
 	margin: 30px;
 	width: 45%;
 	text-align: left;
-	padding: 10px;
+	padding: 0 15px 15px 15px;
 	float: left;
 	margin-left: 30px;
 }
@@ -685,10 +699,9 @@ Sleep
 	width:70px;
 	border-radius: 5px;
 	padding: 5px;
-	margin-top: 2px;
 	float: right;
 	cursor: pointer;
-	margin-right:50px;
+	margin-right:5px;
 }
 
 #sleep_wrapper input[type="time"] {
@@ -696,6 +709,7 @@ Sleep
 }
 
 #stats {
+
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -708,15 +722,17 @@ Sleep
 	padding: 5px;
 	cursor: pointer;
 	float:right;
-	margin-right:30px;
+	margin-right:60px;
 }
 
 #stats-content{background-color: #fefefe;
 margin: auto;
+z-index: 1;
 text-align: left;
 padding: 10px;
 border: 1px solid #888;
-width: 30%; }
+width: 60%; 
+height:100%;}
 
 #goals {
 	margin-top: 30px;
@@ -739,8 +755,6 @@ width: 30%; }
 }
 
 #goaltime {
-	border: 1px dotted black;
-	border-radius: 5px;
 	width: 100%;
 	text-align: left;
 	padding: 10px;
@@ -783,7 +797,6 @@ width: 30%; }
 	padding:10px;
 	margin-bottom: 20px;
 	margin-right:10px;
-	background-image: url("images/sunny.jpg");
 }
 #results_view{
 	text-decoration: none;
@@ -794,3 +807,7 @@ width: 30%; }
 	padding: 7px;
 	width:140px;
 }
+
+
+
+/*schedule sutff*/
