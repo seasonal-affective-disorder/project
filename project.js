@@ -103,8 +103,11 @@ function myFunction(x) {
     }
   }
 
-function logSleep(s_date,s_bedtime,s_waketime){
-    if((s_date.value=="")||(s_bedtime.value =="")||(s_waketime.value=="")){
+
+var sleep_index_list=[]
+var sleep_i=0;
+function logSleep(s_beddate,s_wakedate,s_bedtime,s_waketime){
+    if((s_beddate.value=="")||(s_wakedate=="")||(s_bedtime.value =="")||(s_waketime.value=="")){
         alert("Please enter the required details");
     }
     else{
@@ -113,22 +116,28 @@ function logSleep(s_date,s_bedtime,s_waketime){
           } else {
             sessionStorage.sleepCount = Number(sessionStorage.sleepCount)+1;
           }
-          index_date="sleep_"+sessionStorage.sleepCount+"_date";
-          index_bedtime="sleep_"+sessionStorage.sleepCount+"_bedtime";
-          index_waketime="sleep_"+sessionStorage.sleepCount+"_waketime";
-          sessionStorage.index_date = s_date.value;
-          sessionStorage.index_bedtime = s_bedtime.value;
-          sessionStorage.index_waketime = s_waketime.value;
           if (sessionStorage.sleep_content==null) {
-            sessionStorage.sleep_content = "<div>"+sessionStorage.sleepCount+". Date: "+s_date.value+
-            "<br/>Sleeping hours: "+s_bedtime.value+" to "+s_waketime.value+"</div>";
+            var timeStart = new Date(s_beddate.value+" "+ s_bedtime.value).getTime();
+            var timeEnd = new Date(s_wakedate.value+" "+s_waketime.value).getTime();
+            var no_millisecs = timeEnd - timeStart;
+
+            var no_secs = Math.ceil((no_millisecs / 1000) % 60) ;
+            var no_mins = Math.ceil((no_millisecs / (1000*60)) % 60);
+            var no_hrs  = Math.ceil((no_millisecs / (1000*60*60)) % 24);
+            sessionStorage.sleep_content = "<div>"+s_wakedate.value+"| Sleep Duration: "+no_hrs+"hrs "+no_mins+"mins "+no_secs+"secs</div>";
           } else {
-            sessionStorage.sleep_content += "<div>"+sessionStorage.sleepCount+". Date: "+s_date.value+
-            "<br/>Sleeping hours: "+s_bedtime.value+" to "+s_waketime.value+"</div>";
+            var timeStart = new Date(s_beddate.value+" "+ s_bedtime.value).getTime();
+            var timeEnd = new Date(s_wakedate.value+" "+s_waketime.value).getTime();
+            var no_millisecs = timeEnd - timeStart;
+            var no_secs = Math.ceil((no_millisecs / 1000) % 60) ;
+            var no_mins = Math.ceil((no_millisecs / (1000*60)) % 60);
+            var no_hrs  = Math.ceil((no_millisecs / (1000*60*60)) % 24);
+            sessionStorage.sleep_content += "<div>"+s_wakedate.value+"| Sleep Duration: "+no_hrs+"hrs "+no_mins+"mins "+no_secs+"secs</div>";
           }
          
           document.getElementById('sleep_history').innerHTML=sessionStorage.sleep_content;
         document.getElementById('sleep_history').style.display="block";
+        alert("Sleep time have been logged")
     }
 }
 
@@ -143,18 +152,24 @@ function logNap(n_date,n_bedtime,n_waketime){
             sessionStorage.napCount = Number(sessionStorage.napCount)+1;
           }
     
-          index_date="nap_"+sessionStorage.napCount+"_date";
-          index_bedtime="nap_"+sessionStorage.napCount+"_bedtime";
-          index_waketime="nap_"+sessionStorage.napCount+"_waketime";
-          sessionStorage.index_date = n_date.value;
-          sessionStorage.index_bedtime = n_bedtime.value;
-          sessionStorage.index_waketime = n_waketime.value;
           if (sessionStorage.nap_content==null) {
-            sessionStorage.nap_content = "<div>"+sessionStorage.napCount+". Date: "+n_date.value+
-            "<br/>Nap hours: "+n_bedtime.value+" to "+n_waketime.value+"</div>";
+            var timeStart = new Date(n_date.value+" "+ n_bedtime.value).getTime();
+            var timeEnd = new Date(n_date.value+" "+n_waketime.value).getTime();
+            var no_millisecs = timeEnd - timeStart;
+            var no_secs = Math.ceil((no_millisecs / 1000) % 60) ;
+            var no_mins = Math.ceil((no_millisecs / (1000*60)) % 60);
+            var no_hrs  = Math.ceil((no_millisecs / (1000*60*60)) % 24);
+            sessionStorage.nap_content = "<div>"+n_date.value+"| Nap Duration: "+no_hrs+"hrs "+no_mins+"mins "+no_secs+"secs</div>";
+          
           } else {
-            sessionStorage.nap_content += "<div>"+sessionStorage.napCount+". Date: "+n_date.value+
-            "<br/>Nap hours: "+n_bedtime.value+" to "+n_waketime.value+"</div>";
+            var timeStart = new Date(n_date.value+" "+ n_bedtime.value).getTime();
+            var timeEnd = new Date(n_date.value+" "+n_waketime.value).getTime();
+            var no_millisecs = timeEnd - timeStart;
+            var no_secs = Math.ceil((no_millisecs / 1000) % 60) ;
+            var no_mins = Math.ceil((no_millisecs / (1000*60)) % 60);
+            var no_hrs  = Math.ceil((no_millisecs / (1000*60*60)) % 24);
+            sessionStorage.nap_content += "<div>"+n_date.value+"| Nap Duration: "+no_hrs+"hrs "+no_mins+"mins "+no_secs+"secs</div>";
+          
           }
          
           document.getElementById('nap_history').innerHTML=sessionStorage.nap_content;
@@ -173,13 +188,25 @@ function enterGoal(g_bedtime,g_waketime){
           index_waketime="goal_"+sessionStorage.goalCount+"_waketime";
           sessionStorage.index_bedtime = g_bedtime.value;
           sessionStorage.index_waketime = g_waketime.value;
-          sessionStorage.goal_content = "<div>Goal: "+g_bedtime.value+" to "+g_waketime.value+"</div>";
+
+          sessionStorage.goal_content = "<div>Goal set: "+tConv24(sessionStorage.index_bedtime)+" to "+tConv24(sessionStorage.index_waketime)+"<br/>Your reminder to bedtime is set.</div>";
           } else {
             alert("Goal already entered")
           }
           document.getElementById('goal_entered').innerHTML=sessionStorage.goal_content;
+
         document.getElementById('goal_entered').style.display="block";
     }
+}
+
+function tConv24(time24) {
+  var ts = time24;
+  var H = +ts.substr(0, 2);
+  var h = (H % 12) || 12;
+  h = (h < 10)?("0"+h):h;  // leading 0 at the left for 1 digit hours
+  var ampm = H < 12 ? " AM" : " PM";
+  ts = h + ts.substr(2, 3) + ampm;
+  return ts;
 }
 
 function close_d(){
@@ -193,7 +220,37 @@ function showStats(){
     else{
 
         var content;
-        content="<span class='close' onclick='close_d()'>&times;</span><h3>Sessions Logged:</h3>"+sessionStorage.sleepCount+"<h3>Average Hours of Sleep:</h3>6.4 hours <br/> <h3>Goal:</h3>"+sessionStorage.goal_content+"<h3>Hour Difference Between Last Bedtime and Goal</h3>"+sessionStorage.sleepCount+1;
+        index_bedtime="goal_1_bedtime";
+          index_waketime="goal_1_waketime";
+        var timeStart = new Date("2019-03-11 "+sessionStorage.index_bedtime).getTime();
+          var timeEnd = new Date("2019-03-12 "+sessionStorage.index_waketime).getTime();
+          var no_millisecs = timeEnd - timeStart;
+          var no_hrs  = Math.ceil((no_millisecs / (1000*60*60)) % 24);
+          if(no_hrs>7.5||no_hrs==7.5){
+            content="<span class='close' onclick='close_d()'>&times;</span>"+
+            "<h3 style='margin-left:40px;'>Sleep Duration</h3>"+
+            "<img style='width:400px;height:300px;float:left;margin-left:40px;'src='images/sleep_stats.jpg'/>"+
+            "<div style='float:left;margin:41% 20px 0 -400px;width:210px;border:1px solid black;border-radius:7%;padding:10px;'>"+
+            "<h3>Average Hours of Sleep:</h3>7.5 hours</div>"+
+            "<div style='float:left;margin: 41% 50px 0 -150px;width:210px;border:1px solid black;border-radius:7%;padding:10px;'>"+
+            "<h3>Goal:</h3>"+no_hrs+" hours</div>"+
+            "<div style='float:left;margin: 41% 0 0 -10px;width:210px;border:1px solid black;border-radius:7%;padding:10px;'>"+
+            "<h3>Sleep in deficit by:</h3>"+Math.abs(no_hrs-7.5)+" hours </div>"+
+            "<button onclick='next_stats()' style='float:right;background-color:rgb(191, 144, 0);color:white;border-radius:5px;padding:5px;cursor:pointer;margin-top:15px;width:100px;'>Next</button>";
+          }
+          else{
+            content="<span class='close' onclick='close_d()'>&times;</span>"+
+            "<h3 style='margin-left:40px;'>Sleep Duration</h3>"+
+            "<img style='width:400px;height:300px;float:left;margin-left:40px;'src='images/sleep_stats.jpg'/>"+
+            "<div style='float:left;margin:41% 20px 0 -400px;width:210px;border:1px solid black;border-radius:7%;padding:10px;'>"+
+            "<h3>Average Hours of Sleep:</h3>7.5 hours</div>"+
+            "<div style='float:left;margin: 41% 50px 0 -150px;width:210px;border:1px solid black;border-radius:7%;padding:10px;'>"+
+            "<h3>Goal:</h3>"+no_hrs+" hours</div>"+
+            "<div style='float:left;margin: 41% 0 0 -10px;width:210px;border:1px solid black;border-radius:7%;padding:10px;'>"+
+            "<h3>Sleep in excess by:</h3>"+Math.abs(no_hrs-7.5)+" hours </div>"+
+            "<button onclick='next_stats()' style='float:right;background-color:rgb(191, 144, 0);color:white;border-radius:5px;padding:5px;cursor:pointer;margin-top:15px;width:100px;'>Next</button>";
+          }
+
         document.getElementById('stats-content').innerHTML=content;
         document.getElementById('stats_modal').style.display="block";
 
@@ -201,7 +258,23 @@ function showStats(){
     }
 
 }
+function next_stats(){
+  index_bedtime="goal_1_bedtime";
+  index_waketime="goal_1_waketime";
+  content="<span class='close' onclick='close_d()'>&times;</span>"+
+  "<div style='float:left;margin-left:40px;'><h3>Bedtime Stats</h3>"+
+  "<img style='width:310px;height:220px;'src='images/bedtime_stats.jpg'/>"+
+  "<div style='width:210px;border:1px solid black;border-radius:7%;padding:10px;margin-top:13%;'>"+
+  "<h3>Goal Bedtime:</h3>"+tConv24(sessionStorage.index_bedtime)+"</div></div>"+
 
+  "<div style='float:left;margin-left:85px;'><h3>Waketime Stats</h3>"+
+  "<img style='width:310px;height:220px;'src='images/waketime_stats.jpg'/>"+
+  "<div style='width:210px;border:1px solid black;border-radius:7%;padding:10px;margin-top:13%;'>"+
+  "<h3>Goal Waketime:</h3>"+tConv24(sessionStorage.index_waketime)+"</div></div>"+
+
+  "<button onclick='showStats()' style='float:right;background-color:rgb(191, 144, 0);color:white;border-radius:5px;padding:5px;cursor:pointer;margin-top:82.5px;width:100px;'>Back</button>";
+document.getElementById('stats-content').innerHTML=content;
+}
 function signOut(myURL){
     sessionStorage.clear();
 window.location=myURL;
