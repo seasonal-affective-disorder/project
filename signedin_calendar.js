@@ -1,7 +1,6 @@
 // Activities
 var event_date;
 var event_time;
-var s_no;
 var c;
 var modal;
 var span=document.getElementsByClassName("close")[0];
@@ -287,9 +286,9 @@ function tConv24(time24) {
 }
 
 // When the user clicks on <span> (x), close the modal
-function close_d() {
-  document.getElementById("details"+s_no).style.display="none";
-}
+// function close_d() {
+//   document.getElementById("details"+s_no).style.display="none";
+// }
 
 function view_details(){
   var content;
